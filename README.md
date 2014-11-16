@@ -9,5 +9,5 @@ This repository will host Satoko as soon as a working stable is ready.
 
 | Server Side | Client Side |
 | ----------- | ----------- |
-| PHP 5.3+ | CSS3 |
-| A PDO compatible SQL Server (MySQL Recommended) | JavaScript |
+| [PHP 5.3+](http://php.net/migration53) | CSS3 |
+| A [PDO](http://php.net/manual/en/pdo.drivers.php) compatible SQL Server (MySQL Recommended) | JavaScript |
