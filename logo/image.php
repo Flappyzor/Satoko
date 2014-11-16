@@ -23,7 +23,7 @@ if($printURI) {
 	print (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . str_replace(basename(__FILE__), null, $_SERVER['PHP_SELF']) . $image;
 } else {
 	// Set proper file header
-	header('Content-Type: ' . mime_content_type($image));
+	header('Content-Type: ' . finfo_file(finfo_open(FILEINFO_MIME_TYPE), $image));
 	// Print out contents of the image
 	print file_get_contents($image);
 }
