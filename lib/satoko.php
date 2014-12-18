@@ -1,23 +1,26 @@
 <?php
+/*
+	Satoko Board
+	(c)Flashwave <http://flash.moe>
+	Licensed under MIT-License
+*/
+
 namespace Satoko;
 
-require_once 'satoko_templates.php';
-
-use PDO;
-use PDOException;
-use Satoko\Templates;
+require_once 'SatokoDatabase.php';
+require_once 'SatokoTemplates.php';
 
 class Board {
 
-	var $_database;
-	var $_configuration;
-	var $_templates;
+	public $_database;
+	public $_configuration;
+	public $_templates;
 
 	// Constructor
 	function __construct($config) {
 		// Stop the execution if the PHP Version is older than 5.3.0
 		if(version_compare(phpversion(), '5.3.0', '<'))
-			die('<h1>Upgrade your PHP Version!</h1>');
+			die('<h3>Upgrade your PHP Version!</h3>');
 	
 		// Assign $config values to $_configuration
 		$this->_configuration = $config;
@@ -26,24 +29,13 @@ class Board {
 		$this->_templates = new Templates;
 		
 		// Connect to database
-		$this->initDatabaseConnection();
-	}
-	
-	// Connect to Database
-	private function initDatabaseConnection() {
-		try {
-			// Connect to SQL server using PDO
-			$this->_database = new PDO($this->_configuration['db']['connect'], $this->_configuration['db']['user'], $this->_configuration['db']['pass']);
-		} catch(PDOException $e) {
-			// Catch connection errors
-			die('<h3>SQL Connection Error: ' . $e->getMessage() . '</h3>');
-		}
+		//$this->initDatabaseConnection();
 	}
 	
 	// Get values from the configuration
-	public function getConfig($key) {
-		if(array_key_exists($key, $this->_configuration)) {
-			return $this->_configuration[$key];
+	public static function getConfig($key) {
+		if(array_key_exists($key, self::$_configuration)) {
+			return self::$_configuration[$key];
 		} else {
 			return false;
 		}

@@ -22,10 +22,10 @@
 					<td>[LANG]comment[/LANG]</td>
 					<td><textarea name="com" cols="48" rows="4" wrap="soft"></textarea></td>
 				</tr>
-				<!--<tr>
+				<tr>
 					<td>[LANG]verification[/LANG]</td>
 					<td>VERIFICARION SHTI THEJREKTRGLFBHNDTMJKGFL</td>
-				</tr>-->
+				</tr>
 				<tr>
 					<td>[LANG]file[/LANG]</td>
 					<td><input id="postFile" name="upfile" type="file" /><div>[<label><input name="spoiler" value="on" type="checkbox">[LANG]spoilerimg[/LANG]</label>]</div></td>
