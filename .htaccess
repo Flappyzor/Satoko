@@ -1,0 +1,27 @@
+#
+# Satoko Image Board .htaccess
+#
+
+# Set directory index to satoko.php
+DirectoryIndex satoko.php
+
+# If mod_headers is enabled disable cache
+<ifModule mod_headers.c>
+	Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+	Header set Pragma "no-cache"
+	Header set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
+</ifModule>
+
+# Block every file starting with a dot from being publicly accessed
+<Files ".*">
+	Order Allow,Deny
+	Deny from All
+</Files>
+
+# Turn directory listing off
+Options -Indexes
+
+## Apache 2.x mod_rewrite lines for live mode
+#RewriteEngine On
+#Options +FollowSymLinks
+#RewriteRule ^(res|thread)/([0-9]+)?\.htm?l?$ index.php?thread=$2 [L,NC]
