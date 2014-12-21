@@ -1,7 +1,7 @@
 <?php
 // Require core PHP files
 require_once '.config.php';
-require_once 'lib/satoko.php';
+require_once 'lib/Satoko.php';
 
 // Initialise Board
 $board = new Satoko\Board($satoko);

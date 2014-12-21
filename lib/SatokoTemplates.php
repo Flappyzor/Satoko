@@ -1,8 +1,8 @@
 <?php
-/*
+/**
 	Satoko Templating
 	(c)Flashwave <http://flash.moe>
-	Licensed under MIT-License
+	Distributed under the MIT-License
 */
 
 namespace Satoko;
