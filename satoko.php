@@ -10,7 +10,9 @@ $board->setBoard($board->getConfig('board'));
 
 // Start board
 if($board->getConfig('liveEnable')) { // Live mode
-	print 'TODO: Make live mode.';
+	//print 'TODO: Make live mode.';
+	print $board->_TEMPL->temp_output('header');
+	print $board->_TEMPL->temp_output('footer');
 } else { // Static mode
 	print 'not live';
 }
