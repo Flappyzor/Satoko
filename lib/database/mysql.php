@@ -13,6 +13,9 @@ use PDOStatement;
 
 class Database {
 
+    // Variable that will contain the SQL connection
+    // Please refrain from referring to this, unless it's for your personal branch/purpose, despite it being public
+    // it sort of defeats the "dynamic database system" I want to go for.
     public static $sql;
 
     // Constructor
