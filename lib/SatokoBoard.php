@@ -1,17 +1,17 @@
 <?php
 /*
-	Satoko Board
-	(c)Flashwave <http://flash.moe>
-	Released under the Apache License Version 2
-*/
+ * Satoko Board Engine
+ * (c)Flashwave 2013-2014 <http://flash.moe>
+ * Released under the Apache License Version 2
+ */
 
 namespace Satoko;
 
 class Board {
 
-	public $_database;
-	public $_configuration;
-	public $_templates;
+	public static $_CONF;
+	public static $_DB;
+	public $_TEMPL;
 
 	// Constructor
 	function __construct($config) {
@@ -20,22 +20,24 @@ class Board {
 			die('<h3>Upgrade your PHP Version!</h3>');
 	
 		// Assign $config values to $_configuration
-		$this->_configuration = $config;
+		self::$_CONF = $config;
 	
 		// Initialise templating engine
-		$this->_templates = new Templates;
+		$this->_TEMPL = new Templates();
 		
-		// Connect to database
-		//$this->initDatabaseConnection();
+		// Initialise database
+		self::$_DB = new Database();
 	}
 	
 	// Get values from the configuration
-	public static function getConfig($key) {
-		if(array_key_exists($key, self::$_configuration)) {
-			return self::$_configuration[$key];
-		} else {
+	public static function getConfig($key, $subkey = null) {
+		if(array_key_exists($key, self::$_CONF)) {
+			if($subkey)
+				return self::$_CONF[$key][$subkey];
+			else
+				return self::$_CONF[$key];
+		} else
 			return false;
-		}
 	}
 	
 	// Setting board to get its data

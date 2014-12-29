@@ -1,9 +1,9 @@
 <?php
 /*
-	Satoko MySQL Database Engine
-	(c)Flashwave <http://flash.moe>
-    Released under the Apache License Version 2
-*/
+ * Satoko MySQL Database Engine
+ * (c)Flashwave <http://flash.moe>
+ * Released under the Apache License Version 2
+ */
 
 namespace Satoko;
 
@@ -25,23 +25,23 @@ class Database {
         // Initialise connection
         $this->initConnect(
             (
-            Board::getConfig('unixsocket') ?
+            Board::getConfig('db', 'unixsocket') ?
                 $this->prepareSock(
-                    Board::getConfig('host'),
-                    Board::getConfig('database')
+                    Board::getConfig('db', 'host'),
+                    Board::getConfig('db', 'database')
                 ) :
                 $this->prepareHost(
-                    Board::getConfig('host'),
-                    Board::getConfig('database'),
+                    Board::getConfig('db', 'host'),
+                    Board::getConfig('db', 'database'),
                     (
-                    Board::getConfig('port') !== null ?
-                        Board::getConfig('port') :
+                        Board::getConfig('db', 'port') !== null ?
+                        Board::getConfig('db', 'port') :
                         3306
                     )
                 )
             ),
-            Board::getConfig('username'),
-            Board::getConfig('password')
+            Board::getConfig('db', 'username'),
+            Board::getConfig('db', 'password')
         );
     }
 
