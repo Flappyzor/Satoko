@@ -1,8 +1,8 @@
 <?php
-/**
+/*
 	Satoko Board
 	(c)Flashwave <http://flash.moe>
-	Distributed under the MIT-License
+	Released under the Apache License Version 2
 */
 
 namespace Satoko;

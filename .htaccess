@@ -24,4 +24,4 @@ Options -Indexes
 ## Apache 2.x mod_rewrite lines for live mode
 #RewriteEngine On
 #Options +FollowSymLinks
-#RewriteRule ^(res|thread)/([0-9]+)?\.htm?l?$ index.php?thread=$2 [L,NC]
+#RewriteRule ^(res|thread)/([0-9]+)?\.htm?l?$ satoko.php?thread=$2 [L,NC]
