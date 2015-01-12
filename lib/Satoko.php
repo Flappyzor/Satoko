@@ -25,7 +25,7 @@ if($satoko['exposeErrors']) {
 
 // Include libraries
 require_once 'SatokoBoard.php';
-require_once 'SatokoTemplates.php';
+require_once 'twig/Autoloader.php';
 
 // Include database driver
 if(file_exists(SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php')) {
@@ -34,3 +34,6 @@ if(file_exists(SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver']
 } else {
     die('<h1>Failed to load database driver.</h1>Satoko depends on a working SQL library, without one it cannot function.<hr />Satoko Imageboard ' . SATOKO_VERSION);
 }
+
+// Initialise Twig
+Twig_Autoloader::register();
