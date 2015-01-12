@@ -1,7 +1,7 @@
 <?php
 /*
  * Satoko Board Engine
- * (c)Flashwave 2013-2014 <http://flash.moe>
+ * (c)Flashwave 2013-2015 <http://flash.moe>
  * Released under the Apache License Version 2
  */
 
@@ -40,4 +40,5 @@ class Board {
 	public function setBoard($ident) {
 	
 	}
+
 }

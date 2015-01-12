@@ -1,7 +1,7 @@
 <?php
 /*
- * Satoko MySQL Database Engine
- * (c)Flashwave <http://flash.moe>
+ * Satoko Backend
+ * (c)Flashwave 2013-2015 <http://flash.moe>
  * Released under the Apache License Version 2
  */
 
