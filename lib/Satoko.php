@@ -27,10 +27,13 @@ if($satoko['exposeErrors']) {
 require_once SATOKO_ROOT_DIRECTORY . 'lib/SatokoBoard.php';
 require_once SATOKO_ROOT_DIRECTORY . 'lib/twig/Autoloader.php';
 
+// Generate path to database driver
+$_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php';
+
 // Include database driver
-if(file_exists(SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php')) {
+if(file_exists($_DBNGNPATH)) {
     // Require database library
-    require_once SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php';
+    require_once $_DBNGNPATH;
 } else {
     die('<h1>Failed to load database driver.</h1>Satoko depends on a working SQL library, without one it cannot function.<hr />Satoko Imageboard ' . SATOKO_VERSION);
 }
