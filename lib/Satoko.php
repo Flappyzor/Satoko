@@ -35,5 +35,13 @@ if(file_exists(SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver']
     die('<h1>Failed to load database driver.</h1>Satoko depends on a working SQL library, without one it cannot function.<hr />Satoko Imageboard ' . SATOKO_VERSION);
 }
 
-// Initialise Twig
+// Load Twig
 Twig_Autoloader::register();
+
+// Initialise Twig Filesystem Loader
+$twigLoader = new Twig_Loader_Filesystem(SATOKO_ROOT_DIRECTORY . 'tpl');
+
+// And now actually initialise the templating engine
+$twigEnv = new Twig_Environment($twigLoader, array(
+    'cache' => SATOKO_ROOT_DIRECTORY . 'cache'
+));
