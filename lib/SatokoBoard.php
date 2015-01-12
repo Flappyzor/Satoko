@@ -11,7 +11,6 @@ class Board {
 
 	public static $_CONF;
 	public static $_DB;
-	public $_TEMPL;
 
 	// Constructor
 	function __construct($config) {
@@ -21,9 +20,6 @@ class Board {
 	
 		// Assign $config values to $_configuration
 		self::$_CONF = $config;
-	
-		// Initialise templating engine
-		$this->_TEMPL = new Templates();
 		
 		// Initialise database
 		self::$_DB = new Database();

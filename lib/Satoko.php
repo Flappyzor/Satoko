@@ -24,8 +24,8 @@ if($satoko['exposeErrors']) {
 }
 
 // Include libraries
-require_once 'SatokoBoard.php';
-require_once 'twig/Autoloader.php';
+require_once SATOKO_ROOT_DIRECTORY . 'lib/SatokoBoard.php';
+require_once SATOKO_ROOT_DIRECTORY . 'lib/twig/Autoloader.php';
 
 // Include database driver
 if(file_exists(SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php')) {
