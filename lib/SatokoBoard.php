@@ -40,5 +40,31 @@ class Board {
 	public function setBoard($ident) {
 	
 	}
+    
+    // Getting the board list array
+    public function getBoardList() {
+        $boardList = self::getConfig('boardList');
+        
+        if(!is_array($boardList)) {
+            if(file_exists($boardList)) {
+                $boardList = json_decode(file_get_contents($boardList), true);
+            }
+        }
+        
+        return $boardList;
+    }
+    
+    // Getting the stylesheet array
+    public function getStylesheets() {
+        $stylesheets = self::getConfig('boardStyles');
+        
+        if(!is_array($stylesheets)) {
+            if(file_exists($stylesheets)) {
+                $stylesheets = json_decode(file_get_contents($stylesheets), true);
+            }
+        }
+        
+        return $stylesheets;
+    }
 
 }

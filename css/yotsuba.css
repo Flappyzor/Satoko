@@ -51,6 +51,10 @@ a:hover, a:active {
     text-align: center;
 }
 
+.clear {
+    clear: both !important;
+}
+
 div.boardBanner {
 	text-align: center;
 	clear: both;
@@ -299,7 +303,6 @@ div#absbot {
     padding-bottom: 4px;
     padding-top: 10px;
     color: #800;
-	clear: both;
 }
 
 a.replylink:not(:hover), div#absbot a:not(:hover) {

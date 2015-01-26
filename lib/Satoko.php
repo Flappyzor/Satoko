@@ -43,5 +43,5 @@ $twigLoader = new Twig_Loader_Filesystem(SATOKO_ROOT_DIRECTORY . 'tpl');
 
 // And now actually initialise the templating engine
 $twigEnv = new Twig_Environment($twigLoader, array(
-    'cache' => SATOKO_ROOT_DIRECTORY . 'cache'
+   // 'cache' => SATOKO_ROOT_DIRECTORY . $satoko['cacheFolder']
 ));
