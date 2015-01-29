@@ -6,7 +6,7 @@
  */
 
 // Define Satoko Version
-define('SATOKO_VERSION', '1.0alpha1'); // Version number for update checking and stuff like that.
+define('SATOKO_VERSION', 'testing'); // Version number for update checking and stuff like that.
 define('SATOKO_ROOT_DIRECTORY', str_replace('lib', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
 // Include configuration
@@ -37,11 +37,3 @@ if(file_exists($_DBNGNPATH)) {
 } else {
     die('<h1>Failed to load database driver.</h1>Satoko depends on a working SQL library, without one it cannot function.<hr />Satoko Imageboard ' . SATOKO_VERSION);
 }
-
-// Initialise Twig Filesystem Loader
-$twigLoader = new Twig_Loader_Filesystem(SATOKO_ROOT_DIRECTORY . 'tpl');
-
-// And now actually initialise the templating engine
-$twigEnv = new Twig_Environment($twigLoader, array(
-   // 'cache' => SATOKO_ROOT_DIRECTORY . $satoko['cacheFolder']
-));

@@ -258,6 +258,7 @@ div.stylechanger {
     float: right;
     font-size: 10pt;
     clear: both;
+    padding: 3px 0px 5px;
 }
 
 div.stylechanger select {
@@ -317,6 +318,7 @@ div#boardNavDesktop {
     font-size: 9pt;
     color: #B86;
     display: block;
+    clear: both;
 }
 
 div#boardNavDesktop a {

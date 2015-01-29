@@ -1,5 +1,5 @@
-{% include 'header.tpl' %}
-{% include 'posting.tpl' %}
+{% include 'boardHeader.tpl' %}
+{% include 'postingForm.tpl' %}
 <hr />
 <div class="globalMessage">
     <h3>We're live once again!</h3>
@@ -8,4 +8,4 @@
 </div>
 <hr />
 {% include 'boardPage.tpl' %}
-{% include 'footer.tpl' %}
+{% include 'boardFooter.tpl' %}

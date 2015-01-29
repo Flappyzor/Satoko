@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="{{ board.charset }}" />
-        <title>{{ board.title }}</title>
+        <meta charset="{{ configuration.charset }}" />
+        <title>{{ configuration.boardTitle }}</title>
         {% for styleName, styleLink in board.stylesheets %}
-            <link rel="stylesheet" type="text/css" title="{{ styleName }}" href="{{ styleLink }}"{% if not loop.first %} disabled="true"{% endif %} />
+            <link rel="stylesheet" type="text/css" title="{{ styleName }}" href="{{ board.stylesPath }}{{ styleLink }}"{% if not loop.first %} disabled="true"{% endif %} />
         {% endfor %}
         {#<script type="text/javascript" charset="{{ charset }}" src="[CONF]satokojs[/CONF]"></script>#}
-        <meta name="description" content="{{ board.description }}" />
+        <meta name="description" content="{{ configuration.boardDescription }}" />
         <meta http-equiv="cache-control" content="max-age=0" />
         <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="expires" content="0" />
@@ -18,11 +18,11 @@
         <div id="top"></div>
         {% include 'boardList.tpl' %}
         <div class="boardBanner">
-            <img src="{{ board.logo }}" alt="{{ board.title }}" />
+            <img src="{{ configuration.boardImage }}" alt="{{ configuration.boardTitle }}" />
             <div class="boardTitle">
-                {{ board.title }}
+                {{ configuration.boardTitle }}
             </div>
             <div class="boardSubtitle">
-                {{ board.subtitle }}
+                {{ configuration.boardSubtitle }}
             </div>
         </div>

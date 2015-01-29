@@ -9,7 +9,8 @@
                     {{ lang.password }} 
                     <input id="delPassword" name="pwd" type="password" />
                 </div>
-                {% include 'styleswitch.tpl' %}
+                {% include 'styleSwitcher.tpl' %}
             </div>
         </form>
+        {% include 'boardNav.tpl' %}
         {% include 'boardList.tpl' %}

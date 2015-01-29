@@ -1,7 +1,7 @@
         <hr class="abovePostForm" />
         <div class="navLinks">
-            {% if board.catalog is not null %}
-                [<a href="./{{ board.catalog }}">{{ lang.catalog }}</a>]
+            {% if configuration.catalogFile is not null %}
+                [<a href="./{{ configuration.catalogFile }}">{{ lang.catalog }}</a>]
             {% endif %}
             [<a href="{{ server.PHP_SELF }}">{{ lang.refresh }}</a>]
         </div>
@@ -29,7 +29,19 @@
                 </tr>
                 <tr>
                     <td>{{ lang.file }}</td>
-                    <td><input id="postFile" name="upfile" type="file" /><div>[<label><input name="spoiler" value="on" type="checkbox">{{ lang.spoilerq }}</label>]</div><div>[<label><input name="nofile" value="on" type="checkbox">{{ lang.nofileq }}</label>]</div></td>
+                    <td>
+                        <input id="postFile" name="upfile" type="file" />
+                        {% if configuration.enableSpoiler or configuration.allowNoImg %}
+                        <div>
+                            {% if configuration.enableSpoiler %}
+                            [<label><input name="spoiler" value="on" type="checkbox">{{ lang.spoilerq }}</label>]
+                            {% endif %}
+                            {% if configuration.allowNoImg %}
+                            [<label><input name="nofile" value="on" type="checkbox">{{ lang.nofileq }}</label>]
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </td>
                 </tr>
                 <tr>
                     <td>{{ lang.password }}</td>
@@ -38,8 +50,11 @@
                 <tr class="rules">
                     <td colspan="2">
                         <ul class="rules">
-                            <li>wow</li>
-                            <li>whoa</li>
+                            {% if board.rules|length > 0 %}
+                                {% for rule in board.rules %}
+                                    <li>{{ include(template_from_string(rule)) }}</li>
+                                {% endfor %}
+                            {% endif %}
                         </ul>
                     </td>
                 </tr>

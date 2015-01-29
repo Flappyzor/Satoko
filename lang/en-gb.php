@@ -10,6 +10,8 @@ $language = array(
     'catalog'       => 'Catalogue',
     'refresh'       => 'Refresh',
     'style'         => 'Style',
+    'home'          => 'Home',
+    'manage'        => 'Manage',
     
     'name'          => 'Name',
     'email'         => 'E-mail',
@@ -25,6 +27,9 @@ $language = array(
     'password_sub'  => '(used for post deletion)',
     
     'deletePost'    => 'Delete Post',
-    'fileOnly'      => 'File only'
+    'fileOnly'      => 'File only',
+    
+    'prev'          => 'Previous',
+    'next'          => 'Next'
 
 );

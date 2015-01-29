@@ -11,6 +11,7 @@ class Board {
 
 	public static $_CONF;
 	public static $_DB;
+	public $_TPL;
 
 	// Constructor
 	function __construct($config) {
@@ -41,30 +42,53 @@ class Board {
 	
 	}
     
-    // Getting the board list array
-    public function getBoardList() {
-        $boardList = self::getConfig('boardList');
-        
-        if(!is_array($boardList)) {
-            if(file_exists($boardList)) {
-                $boardList = json_decode(file_get_contents($boardList), true);
+    // Getting JSON files with an array fallback
+    public function getJSONArray($data) {
+        if(!is_array($data)) {
+            if(file_exists($data)) {
+                $data = json_decode(file_get_contents($data), true);
+            } else {
+                trigger_error('Failed to load an Array/JSON File.', E_USER_ERROR);
             }
         }
         
-        return $boardList;
+        return $data;
     }
     
-    // Getting the stylesheet array
-    public function getStylesheets() {
-        $stylesheets = self::getConfig('boardStyles');
+    // Initialise Twig
+    public function initTwig() {
+        // Assign default values set in the configuration
+        $templateName       = self::getConfig('tplName');
+        $templatesFolder    = self::getConfig('tplFolder');
         
-        if(!is_array($stylesheets)) {
-            if(file_exists($stylesheets)) {
-                $stylesheets = json_decode(file_get_contents($stylesheets), true);
-            }
+        // Initialise Twig Filesystem Loader
+        $twigLoader = new \Twig_Loader_Filesystem(SATOKO_ROOT_DIRECTORY. $templatesFolder .'/'. $templateName .'/templates');
+
+        // And now actually initialise the templating engine
+        $this->_TPL = new \Twig_Environment($twigLoader, array(
+           // 'cache' => SATOKO_ROOT_DIRECTORY. $satoko['cacheFolder']
+        ));
+        
+        // Load String template loader
+        $this->_TPL->addExtension(new \Twig_Extension_StringLoader());
+    }
+    
+    // Get Stylesheets file from template
+    public function getStylesheets() {
+        // Assign default values set in the configuration
+        $templateName       = self::getConfig('tplName');
+        $templatesFolder    = self::getConfig('tplFolder');
+        
+        // Set path to styles.json
+        $stylesJSON = SATOKO_ROOT_DIRECTORY. $templatesFolder .'/'. $templateName .'/styles.json';
+        
+        if(file_exists($stylesJSON)) {
+            $stylesJSON = json_decode(file_get_contents($stylesJSON), true);
+        } else {
+            trigger_error('Failed to load styles JSON from template.', E_USER_ERROR);
         }
         
-        return $stylesheets;
+        return $stylesJSON;
     }
 
 }
