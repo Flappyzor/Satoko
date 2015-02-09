@@ -31,14 +31,9 @@
                     <td>{{ lang.file }}</td>
                     <td>
                         <input id="postFile" name="upfile" type="file" />
-                        {% if configuration.enableSpoiler or configuration.allowNoImg %}
+                        {% if configuration.enableSpoiler %}
                         <div>
-                            {% if configuration.enableSpoiler %}
                             [<label><input name="spoiler" value="on" type="checkbox">{{ lang.spoilerq }}</label>]
-                            {% endif %}
-                            {% if configuration.allowNoImg %}
-                            [<label><input name="nofile" value="on" type="checkbox">{{ lang.nofileq }}</label>]
-                            {% endif %}
                         </div>
                         {% endif %}
                     </td>
