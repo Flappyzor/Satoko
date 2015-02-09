@@ -28,23 +28,23 @@ class Database {
         // Initialise connection
         $this->initConnect(
             (
-            Board::getConfig('db', 'unixsocket') ?
+            Base::getConfig('db', 'unixsocket') ?
                 $this->prepareSock(
-                    Board::getConfig('db', 'host'),
-                    Board::getConfig('db', 'database')
+                    Base::getConfig('db', 'host'),
+                    Base::getConfig('db', 'database')
                 ) :
                 $this->prepareHost(
-                    Board::getConfig('db', 'host'),
-                    Board::getConfig('db', 'database'),
+                    Base::getConfig('db', 'host'),
+                    Base::getConfig('db', 'database'),
                     (
-                        Board::getConfig('db', 'port') !== null ?
-                        Board::getConfig('db', 'port') :
+                        Base::getConfig('db', 'port') !== null ?
+                        Base::getConfig('db', 'port') :
                         3306
                     )
                 )
             ),
-            Board::getConfig('db', 'username'),
-            Board::getConfig('db', 'password')
+            Base::getConfig('db', 'username'),
+            Base::getConfig('db', 'password')
         );
     }
 
@@ -76,7 +76,7 @@ class Database {
 
     // Fetch array from database
     public function fetchAll($table) {
-        $query = self::$sql->prepare('SELECT * FROM `' . Board::getConfig('prefix') . $table . '`');
+        $query = self::$sql->prepare('SELECT * FROM `' . Base::getConfig('db', 'prefix') . $table . '`');
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_BOTH);
 
