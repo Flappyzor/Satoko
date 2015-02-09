@@ -22,7 +22,7 @@ class Database {
     function __construct() {
         if(!extension_loaded('PDO')) {
             // Return error and die
-            die('<h3>PDO extension not loaded.</h3>');
+            trigger_error('<b>SQL Driver</b>: PDO extension not loaded.', E_USER_ERROR);
         }
 
         // Initialise connection
@@ -69,7 +69,7 @@ class Database {
             self::$sql = new PDO($DSN, $dbUname, $dbPword);
         } catch(PDOException $e) {
             // Catch connection errors
-            die("<h3>" . $e->getMessage() . "</h3>");
+            trigger_error("SQL Driver: " . $e->getMessage(), E_USER_ERROR);
         }
         return true;
     }
