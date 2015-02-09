@@ -10,9 +10,8 @@ define('SATOKO_VERSION', 'testing'); // Version number for update checking and s
 define('SATOKO_ROOT_DIRECTORY', str_replace('lib', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
 // Include configuration
-if(!include(SATOKO_ROOT_DIRECTORY . '.config.php')) {
-    die('Failed to load configuration, does .config.php exist?');
-}
+if(!include(SATOKO_ROOT_DIRECTORY . '.config.php'))
+    trigger_error('<b>Satoko Init</b>: Failed to load configuration, does .config.php exist?', E_USER_ERROR);
 
 // Error Reporting
 if($satoko['exposeErrors']) {
@@ -24,7 +23,7 @@ if($satoko['exposeErrors']) {
 }
 
 // Include libraries
-require_once SATOKO_ROOT_DIRECTORY . 'lib/SatokoBoard.php';
+require_once SATOKO_ROOT_DIRECTORY . 'lib/SatokoBase.php';
 require_once SATOKO_ROOT_DIRECTORY . 'vendor/autoload.php';
 
 // Generate path to database driver
@@ -35,5 +34,5 @@ if(file_exists($_DBNGNPATH)) {
     // Require database library
     require_once $_DBNGNPATH;
 } else {
-    die('<h1>Failed to load database driver.</h1>Satoko depends on a working SQL library, without one it cannot function.<hr />Satoko Imageboard ' . SATOKO_VERSION);
+    trigger_error('<b>Satoko Init</b>: Failed to load database driver! Satoko depends on a working SQL library, without one it cannot function.', E_USER_ERROR);
 }
