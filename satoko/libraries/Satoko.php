@@ -29,7 +29,6 @@ if($satoko['exposeErrors']) {
 // Include libraries
 require_once SATOKO_ROOT_DIRECTORY . 'vendor/autoload.php';
 require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoBoard.php';
-require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoLanguage.php';
 
 // Generate path to database driver
 $_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'libraries/database/' . $satoko['db']['driver'] . '.php';
@@ -56,9 +55,6 @@ if(file_exists($_LANGPATH)) {
 // Initialise Board
 $board = new Satoko\Board($satoko);
 
-// Set Language
-\Satoko\Language::setLanguage($lang);
-
 // Set Board Identifier
 $board->setBoard($board->getConfig('board'));
 
@@ -73,5 +69,5 @@ $renderData = [
     ],
     'configuration' => $satoko,
     'server' => $_SERVER,
-    'lang' => $language
+    'lang' => $lang
 ];
