@@ -1,9 +1,6 @@
 <?php
 // Require core PHP files
-require_once 'lib/Satoko.php';
-
-// Temporary Language Include
-require_once 'lang/en-gb.php';
+require_once 'libraries/Satoko.php';
 
 // Initialise Board
 $board = new Satoko\Board($satoko);
