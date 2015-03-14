@@ -62,13 +62,14 @@ Satoko\Board::setBoard(Satoko\Board::getConfig('board'));
 $renderData = [
     'board' => [
     
-        'charset'       => Satoko\Board::getConfig('charset'),
+        'charset' => Satoko\Board::getConfig('charset'),
         
-        'boardList'     => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
-        'stylesheets'   => Satoko\Board::getStylesheets(),
-        'stylesPath'    => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
-        'rules'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
-        'version'       => SATOKO_VERSION,
+        'boardList'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
+        'stylesheets'       => Satoko\Board::getStylesheets(),
+        'stylesPath'        => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
+        'rules'             => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
+        'allowedFiletypes'  => implode(', ', array_flip(Satoko\Board::getJSONArray(Satoko\Board::getConfig('filetypes')))),
+        'version'           => SATOKO_VERSION,
         
         'title'         => Satoko\Board::getConfig('boardTitle'),
         'subtitle'      => Satoko\Board::getConfig('boardSubtitle'),

@@ -21,7 +21,6 @@ $satoko['charset']          = 'utf-8'; // Set Character set used for the generat
 $satoko['indexFile']        = 'index.html'; // Filename of the board index (index.html by default).
 $satoko['catalogFile']      = 'catalog.html'; // Filename for Catalog set to null to disable.
 $satoko['exposeErrors']     = true; // Display PHP errors, set this to false if everything's working OK.
-$satoko['types']            = array(); // Allowed filetypes => mimetypes. Set mimetype to null to ignore, not recommended to use EVER. If you want multiple mimetypes make the mimetype bit an array.
 $satoko['threadFolder']     = 'res'; // Folder thread HTML files will be saved to.
 $satoko['imageFolder']      = 'src'; // Folder Images will be saved to.
 $satoko['thumbFolder']      = 'thumb'; // Folder thumbnails will be saved to.
@@ -37,6 +36,7 @@ $satoko['boardDisclaimer']  = 'All trademarks and copyrights on this page are ow
 $satoko['boardImage']       = 'logo/image.php'; // Set URL to board header. Script for randomising board header image is included in the logo folder, if you don't want to use this feature you can delete the logo folder.
 $satoko['boardList']        = 'configuration/boardlist.json'; // JSON file containing boardlinks for the header, if wanted you can make this an array instead and Satoko will detect and adjust to it.
 $satoko['boardRules']       = 'configuration/rules.json'; // The same as the variable above except with rules.
+$satoko['boardFiletypes']   = 'configuration/filetypes.json'; // Allowed filetypes => mimetypes. Set mimetype to null to ignore, not recommended to use EVER. If you want multiple mimetypes make the mimetype bit an array.
 
 // Templates
 $satoko['tplFolder']        = 'templates'; // Local folder path to templates folder.
