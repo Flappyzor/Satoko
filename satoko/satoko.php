@@ -1,12 +1,9 @@
-<?php
+ beginnWhere<?php
 // Require core PHP files
 require_once 'libraries/Satoko.php';
 
 // Initialise Board
 $board = new Satoko\Board($satoko);
-
-// Initialise templating engine
-$board->initTwig();
 
 // Set Board Identifier
 $board->setBoard($board->getConfig('board'));

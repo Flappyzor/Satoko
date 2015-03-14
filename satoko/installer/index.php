@@ -1,0 +1,1 @@
+I haven't written the installer yet. Please check back later when there's actually a stable of Satoko.
