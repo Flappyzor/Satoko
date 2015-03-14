@@ -7,7 +7,7 @@
 
 // Define Satoko Version
 define('SATOKO_VERSION', 'b20150314testing'); // Version number for update checking and stuff like that.
-define('SATOKO_ROOT_DIRECTORY', str_replace('lib', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
+define('SATOKO_ROOT_DIRECTORY', str_replace('libraries', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
 // Include configuration
 if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/config.php'))
