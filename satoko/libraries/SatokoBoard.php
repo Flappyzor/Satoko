@@ -127,7 +127,7 @@ class Board {
 
     // Get the byte symbol from a value
     public static function getByteSymbol($bytes) {
-        $symbols    = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+        $symbols    = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB');
         $exp        = floor(log($bytes) / log(1024));
         return @sprintf("%.2f ". $symbols[$exp], ($bytes / pow(1024, floor($exp))));
     }
