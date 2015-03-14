@@ -80,6 +80,7 @@ $renderData = [
         'title'         => Satoko\Board::getConfig('boardTitle'),
         'subtitle'      => Satoko\Board::getConfig('boardSubtitle'),
         'description'   => Satoko\Board::getConfig('boardDescription'),
+        'disclaimer'    => Satoko\Board::getConfig('boardDisclaimer'),
         'bannerImage'   => Satoko\Board::getConfig('boardImage')
         
     ],
