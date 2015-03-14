@@ -1,0 +1,234 @@
+/*
+ * Satoko Image Board Website Style
+ * By Flashwave
+ */
+
+/*
+ * Defines
+ */
+@charset "utf-8";
+ 
+/*
+ * Global elements
+ */
+html, body {
+	font: 12px "Segoe UI", sans-serif;
+	background: #333;
+	color: #FFF;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.clear {
+	clear: both !important;
+	float: none !important;
+}
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+/*
+ * Content stuffs
+ */
+#content {
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+#wrapper {
+	padding-bottom: 70px;
+}
+.page-content {
+	max-width: 1024px;
+	min-width: 768px;
+	margin: 15px auto 0px;
+}
+
+/*
+ * Section styling
+ */
+.section a {
+	color: #77E;
+	text-decoration: none;
+}
+.section a:hover {
+	text-decoration: underline;
+}
+.section a:active {
+	color: #E77;
+}
+.section {
+	margin: 5px 0px;
+}
+.section .section-title {
+	background: #444;
+	font-weight: 700;
+	padding: 3px 5px;
+	font-size: 20px;
+}
+.section .section-content {
+	border: 1px solid #444;
+	padding: 2px 5px;
+}
+.section .section-content div:first-child {
+	margin: -2px -5px 2px;
+}
+.section .section-content div {
+	background: #3A3A3A;
+	margin: 2px -5px;
+	padding: 2px 5px;
+	font-size: 15px;
+}
+
+/*
+ * Downloads Page
+ */
+.downloads {
+	margin: 5px auto 7px;
+	display: block;
+	text-align: center;
+}
+.downloads a {
+	color: #77E;
+	text-decoration: none;
+}
+.downloads a:hover {
+	text-decoration: underline;
+}
+.downloads a:active {
+	color: #E77;
+}
+.downloads div {
+	font: 20px/50px "Segoe UI", sans-serif;
+}
+.downloads div a {
+	color: #FFF !important;
+	text-shadow: #666 0 .5px;
+	text-decoration: none !important;
+	background: #222;
+	margin: 3px 0px;
+	border-bottom: 3px solid #111;
+	border-radius: 3px;
+	display: inline-block;
+	width: 100%;
+}
+.downloads div a:hover {
+	background: #262626;
+}
+.downloads div a:active {
+	background: #1C1C1C;
+}
+.downloads div a.latest {
+	border-color: #050;
+	background: #070;
+}
+.downloads div a.latest:hover {
+	background: #007F00;
+}
+.downloads div a.latest:active {
+	background: #006F00;
+}
+
+/*
+ * Header menu
+ */
+.menu {
+	background: linear-gradient(180deg, #2A2A2A, #1A1A1A);
+	border-bottom: 4px solid #764675;
+	box-shadow: 0px 0px 10px #764675;
+}
+
+.menu > .menu-container {
+	max-width: 1024px;
+	min-width: 768px;
+	margin: 0px auto;
+	height: 50px;
+}
+
+.menu > .menu-container > .menu-left {
+	float: left;
+}
+.menu > .menu-container > .menu-right {
+	float: right;
+}
+
+.menu > .menu-container > * > a {
+	font-size: 36.5px;
+	cursor: default;
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	float: left;
+	height: 42px;
+	padding: 8px 6px 0px;
+	transition: text-shadow .2s;
+}
+.menu > .menu-container > * > a.active {
+	background: linear-gradient(0deg, transparent, #2A2A2A);
+	cursor: pointer;
+}
+.menu > .menu-container > * > a:hover {
+	background: linear-gradient(180deg, #3A3A3A, #2A2A2A);
+	cursor: pointer;
+	text-shadow: 0px 0px 5px #F1F1F1;
+}
+.menu > .menu-container > * > a:active {
+	background: linear-gradient(0deg, #3A3A3A, #2A2A2A);
+	cursor: pointer;
+}
+
+.menu > .menu-container > * > a > div {
+	float: right;
+	font: 20px "Segoe UI", sans-serif;
+	padding: 3px 1px 3px 8px;
+}
+.menu > .menu-container > #boardnav > a:not(:last-child) > div {
+	padding: 3px 8px;
+}
+
+.menu > .menu-container > * > .logo {
+	height: 50px;
+	padding: 0px 10px;
+}
+
+/*
+ * Homepage boxes
+ */
+.homepage .homepage-desc {
+	background: #222;
+	max-width: 1024px;
+	min-width: 768px;
+	box-shadow: inset 0px 0px 2em #3A3A3A;
+	padding: 5px 0px;
+	margin: 10px auto;
+	border-radius: 10px;
+	text-align: center;
+}
+.homepage .homepage-statistics {
+	text-align: center;
+}
+
+/*
+ * Footer styling
+ */
+.footer {
+	font-size: small;
+	width: 100%;
+	padding: 5px 0px;
+	position: absolute;
+	bottom: 0px;
+	background: linear-gradient(180deg, #2A2A2A, #1A1A1A);
+	border-top: 2px solid #764675;
+	text-align: center;
+	box-shadow: 0px 0px 5px #764675;
+}
+.footer a {
+	color: inherit;
+	text-decoration: none;
+	transition: text-shadow .2s;
+}
+.footer a:hover {
+	text-shadow: 0px 0px 5px #F1F1F1;
+}
