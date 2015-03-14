@@ -142,7 +142,7 @@ html, body {
 
 .menu > .menu-container {
 	max-width: 1024px;
-	min-width: 768px;
+	min-width: 630px;
 	margin: 0px auto;
 	height: 50px;
 }
@@ -196,18 +196,31 @@ html, body {
 /*
  * Homepage boxes
  */
-.homepage .homepage-desc {
-	background: #222;
-	max-width: 1024px;
-	min-width: 768px;
-	box-shadow: inset 0px 0px 2em #3A3A3A;
-	padding: 5px 0px;
-	margin: 10px auto;
-	border-radius: 10px;
-	text-align: center;
+.frontpage > a {
+	display: block;
+    font-size: 9em;
+    text-decoration: none;
+    margin: 20px auto;
+    max-width: 1024px;
+    min-width: 512px;
+    color: #DDD;
+    transition: all .3s;
+    background: linear-gradient(0deg, rgba(24, 24, 24, .2), rgba(42, 42, 42, .7)) transparent;
+    padding: 20px 0;
+    text-align: center;
 }
-.homepage .homepage-statistics {
-	text-align: center;
+@media (min-width: 1024px) {
+    .frontpage > a {
+        border-radius: 20px;
+    }
+}
+.frontpage > a:hover {
+	color: #FFF;
+    text-shadow: 0 0 20px #FFF;
+}
+.frontpage > a > div {
+	font-size: .3em;
+    font-family: "Segoe UI", sans-serif;
 }
 
 /*
