@@ -7,7 +7,7 @@
 
 namespace Satoko;
 
-class Base {
+class Board {
 
     // Class Variables
 	public static $_CONF;

@@ -23,7 +23,7 @@ if($satoko['exposeErrors']) {
 }
 
 // Include libraries
-require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoBase.php';
+require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoBoard.php';
 require_once SATOKO_ROOT_DIRECTORY . 'vendor/autoload.php';
 
 // Generate path to database driver
