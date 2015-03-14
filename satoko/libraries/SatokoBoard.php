@@ -9,16 +9,14 @@ namespace Satoko;
 
 class Board {
 
-    // Class Variables
+    // Variables
 	public static $_CONF;
 	public static $_TPLPUBPATH;
-	public $_TPL;
-
-    // Setting Variables
+	public static $_TPL;
     public static $_BOARDID;
     
-	// Constructor
-	function __construct($config) {
+	// Initialise Board
+	public static function init($config) {
         
 		// Stop the execution if the PHP Version is older than 5.3.0
 		if(version_compare(phpversion(), '5.3.0', '<'))
@@ -31,7 +29,7 @@ class Board {
 		Database::init();
         
         // Templating engine
-        $this->initTwig();
+        self::initTwig();
         
 	}
 	
@@ -70,7 +68,7 @@ class Board {
 	}
     
     // Getting JSON files with an array fallback
-    public function getJSONArray($data) {
+    public static function getJSONArray($data) {
         
         if(!is_array($data)) {
             if(file_exists($data)) {
@@ -85,7 +83,7 @@ class Board {
     }
     
     // Initialise Twig
-    private function initTwig($templateName = null, $templatesFolder = null) {
+    private static function initTwig($templateName = null, $templatesFolder = null) {
         
         // Assign default values set in the configuration if $templateName and $templatesFolder are null
         $templateName       = is_null($templateName)    ? self::getConfig('tplName')    : $templateName;
@@ -98,14 +96,14 @@ class Board {
         $twigLoader = new \Twig_Loader_Filesystem(SATOKO_ROOT_DIRECTORY. $templatesFolder .'/'. $templateName .'/templates');
 
         // And now actually initialise the templating engine
-        $this->_TPL = new \Twig_Environment($twigLoader, array(
+        self::$_TPL = new \Twig_Environment($twigLoader, array(
         
            // 'cache' => SATOKO_ROOT_DIRECTORY. self::getConfig('cacheFolder') // Set cache directory
            
         ));
         
         // Load String template loader
-        $this->_TPL->addExtension(new \Twig_Extension_StringLoader());
+        self::$_TPL->addExtension(new \Twig_Extension_StringLoader());
         
     }
     

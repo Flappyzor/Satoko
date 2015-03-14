@@ -10,11 +10,11 @@ define('SATOKO_VERSION', 'b20150314.1testing'); // Version number for update che
 define('SATOKO_ROOT_DIRECTORY', str_replace('libraries', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
 // Include default configuration
-if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/default.php'))
+if(!include(SATOKO_ROOT_DIRECTORY .'configuration/default.php'))
     trigger_error('<b>Satoko Init</b>: Failed to load default configuration, does configuration/default.php exist?', E_USER_ERROR);
 
 // Include custom configuration
-if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/config.php'))
+if(!include(SATOKO_ROOT_DIRECTORY .'configuration/config.php'))
     trigger_error('<b>Satoko Init</b>: Failed to load custom configuration, does configuration/config.php exist?', E_USER_ERROR);
 
 // Error Reporting
@@ -31,7 +31,7 @@ require_once SATOKO_ROOT_DIRECTORY . 'vendor/autoload.php';
 require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoBoard.php';
 
 // Generate path to database driver
-$_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'libraries/database/' . $satoko['db']['driver'] . '.php';
+$_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'libraries/database/'. $satoko['db']['driver'] .'.php';
 
 // Include database driver
 if(file_exists($_DBNGNPATH)) {
@@ -42,7 +42,7 @@ if(file_exists($_DBNGNPATH)) {
 }
 
 // Generate path to database driver
-$_LANGPATH = SATOKO_ROOT_DIRECTORY . 'libraries/language/' . $satoko['language'] . '.php';
+$_LANGPATH = SATOKO_ROOT_DIRECTORY . 'libraries/language/'. $satoko['language'] .'.php';
 
 // Include database driver
 if(file_exists($_LANGPATH)) {
@@ -53,18 +53,18 @@ if(file_exists($_LANGPATH)) {
 }
 
 // Initialise Board
-$board = new Satoko\Board($satoko);
+Satoko\Board::init($satoko);
 
 // Set Board Identifier
-$board->setBoard($board->getConfig('board'));
+Satoko\Board::setBoard(Satoko\Board::getConfig('board'));
 
 // Set page generator data
 $renderData = [
     'board' => [
-        'boardList' => $board->getJSONArray($board::getConfig('boardList')),
-        'stylesheets' => $board->getStylesheets(),
-        'stylesPath' => $board::getConfig('tplFolder') .'/'. $board::getConfig('tplName') .'/styles/',
-        'rules' => $board->getJSONArray($board::getConfig('boardRules')),
+        'boardList' => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
+        'stylesheets' => Satoko\Board::getStylesheets(),
+        'stylesPath' => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
+        'rules' => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
         'version' => SATOKO_VERSION
     ],
     'configuration' => $satoko,
