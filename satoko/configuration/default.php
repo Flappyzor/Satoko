@@ -54,6 +54,6 @@ $satoko['maxWidth']             = 300; // Maximum image width before thumbnailin
 $satoko['maxHeight']            = 300; // Same as described above but with height.
 
 // ReCAPTCHA Settings
-$satoko['recap']['enable']  = true; // Enable or Disable ReCAPTCHA
+$satoko['recap']['enabled'] = true; // Enable or Disable ReCAPTCHA
 $satoko['recap']['public']  = ''; // Your ReCAPTCHA public key
 $satoko['recap']['private'] = ''; // Your ReCAPTCHA private key
