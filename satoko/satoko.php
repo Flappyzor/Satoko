@@ -12,14 +12,6 @@ $board->initTwig();
 $board->setBoard($board->getConfig('board'));
 
 // Start board
-/*
- Don't need this right now
-if($board->getConfig('liveEnable')) { // Live mode
-    print 'TODO: Make live mode.';
-} else { // Static mode
-    print 'not live';
-}*/
-
 print $board->_TPL->render('index.tpl',
     array(
         'board' => array(

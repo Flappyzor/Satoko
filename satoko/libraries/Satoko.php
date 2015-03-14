@@ -10,8 +10,8 @@ define('SATOKO_VERSION', 'b20150314testing'); // Version number for update check
 define('SATOKO_ROOT_DIRECTORY', str_replace('lib', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
 // Include configuration
-if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/.config.php'))
-    trigger_error('<b>Satoko Init</b>: Failed to load configuration, does configuration/.config.php exist?', E_USER_ERROR);
+if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/config.php'))
+    trigger_error('<b>Satoko Init</b>: Failed to load configuration, does configuration/config.php exist?', E_USER_ERROR);
 
 // Error Reporting
 if($satoko['exposeErrors']) {
