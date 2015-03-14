@@ -61,7 +61,7 @@ class Board {
 	}
 	
 	// Setting board to get its data
-	public function setBoard($ident) {
+	public static function setBoard($ident) {
         
         self::$_BOARDID = $ident;
         
@@ -108,7 +108,7 @@ class Board {
     }
     
     // Get Stylesheets file from template
-    public function getStylesheets($templateName = null, $templatesFolder = null) {
+    public static function getStylesheets($templateName = null, $templatesFolder = null) {
         // Assign default values set in the configuration if $templateName and $templatesFolder are null
         $templateName       = is_null($templateName)    ? self::getConfig('tplName')    : $templateName;
         $templatesFolder    = is_null($templatesFolder) ? self::getConfig('tplFolder')  : $templatesFolder;
