@@ -109,6 +109,7 @@ class Board {
     
     // Get Stylesheets file from template
     public static function getStylesheets($templateName = null, $templatesFolder = null) {
+
         // Assign default values set in the configuration if $templateName and $templatesFolder are null
         $templateName       = is_null($templateName)    ? self::getConfig('tplName')    : $templateName;
         $templatesFolder    = is_null($templatesFolder) ? self::getConfig('tplFolder')  : $templatesFolder;
@@ -123,13 +124,35 @@ class Board {
         }
         
         return $stylesJSON;
+
     }
 
     // Get the byte symbol from a value
     public static function getByteSymbol($bytes) {
+
         $symbols    = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB');
         $exp        = floor(log($bytes) / log(1024));
+
         return @sprintf("%.2f ". $symbols[$exp], ($bytes / pow(1024, floor($exp))));
+
+    }
+
+    // Verify ReCAPTCHA
+    public static function verifyCaptcha($response) {
+
+        // Attempt to get the response
+        $resp = @file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='. self::getConfig('recap', 'private') .'&response='. $response);
+
+        // In the highly unlikely case that it failed to get anything forge a false
+        if(!$resp)
+            return array('success' => false, 'error-codes' => array('Could not connect to the ReCAPTCHA server.'));
+
+        // Decode the response JSON from the servers
+        $resp = json_decode($resp, true);
+
+        // Return shit
+        return $resp;
+
     }
     
 }
