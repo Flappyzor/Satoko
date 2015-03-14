@@ -61,15 +61,27 @@ Satoko\Board::setBoard(Satoko\Board::getConfig('board'));
 // Set page generator data
 $renderData = [
     'board' => [
-        'boardList' => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
-        'stylesheets' => Satoko\Board::getStylesheets(),
-        'stylesPath' => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
-        'rules' => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
-        'version' => SATOKO_VERSION
+    
+        'charset'       => Satoko\Board::getConfig('charset'),
+        
+        'boardList'     => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
+        'stylesheets'   => Satoko\Board::getStylesheets(),
+        'stylesPath'    => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
+        'rules'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
+        'version'       => SATOKO_VERSION,
+        
+        'title'         => Satoko\Board::getConfig('boardTitle'),
+        'subtitle'      => Satoko\Board::getConfig('boardSubtitle'),
+        'description'   => Satoko\Board::getConfig('boardDescription'),
+        'bannerImage'   => Satoko\Board::getConfig('boardImage')
+        
     ],
     'server' => $_SERVER,
     'lang' => $lang,
     'recap' => [
-        'public' => Satoko\Board::getConfig('recap', 'public')
+    
+        'enabled'   => Satoko\Board::getConfig('recap', 'enabled'),
+        'public'    => Satoko\Board::getConfig('recap', 'public')
+        
     ]
 ];
