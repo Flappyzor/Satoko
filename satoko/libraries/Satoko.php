@@ -68,7 +68,7 @@ $renderData = [
         'stylesheets'       => Satoko\Board::getStylesheets(),
         'stylesPath'        => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
         'rules'             => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
-        'allowedFiletypes'  => implode(', ', array_flip(Satoko\Board::getJSONArray(Satoko\Board::getConfig('filetypes')))),
+        'allowedFiletypes'  => implode(', ', array_flip(Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardFiletypes')))),
         'version'           => SATOKO_VERSION,
         
         'title'         => Satoko\Board::getConfig('boardTitle'),
