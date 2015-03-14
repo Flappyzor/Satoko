@@ -6,12 +6,16 @@
  */
 
 // Define Satoko Version
-define('SATOKO_VERSION', 'b20150314testing'); // Version number for update checking and stuff like that.
+define('SATOKO_VERSION', 'b20150314.1testing'); // Version number for update checking and stuff like that.
 define('SATOKO_ROOT_DIRECTORY', str_replace('libraries', '', dirname(__FILE__))); // Might want to look if there's a better way to do this.
 
-// Include configuration
+// Include default configuration
+if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/default.php'))
+    trigger_error('<b>Satoko Init</b>: Failed to load default configuration, does configuration/default.php exist?', E_USER_ERROR);
+
+// Include custom configuration
 if(!include(SATOKO_ROOT_DIRECTORY . 'configuration/config.php'))
-    trigger_error('<b>Satoko Init</b>: Failed to load configuration, does configuration/config.php exist?', E_USER_ERROR);
+    trigger_error('<b>Satoko Init</b>: Failed to load custom configuration, does configuration/config.php exist?', E_USER_ERROR);
 
 // Error Reporting
 if($satoko['exposeErrors']) {
