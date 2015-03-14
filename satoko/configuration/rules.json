@@ -1,5 +1,0 @@
-[
-    "Supported file types are: {{ board.allowedFiletypes }}.",
-    "Maximum file size allowed is {{ board.maxFileSize }}.",
-    "Images greater than {{ configuration.maxWidth }}x{{ configuration.maxHeight }} will be thumbnailed."
-]
