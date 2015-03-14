@@ -52,3 +52,8 @@ $satoko['imageLimit']           = 0; // Amount of images allowed in one thread. 
 $satoko['ageLimit']             = 1800; // The age of a thread (in seconds) before posting gets disabled.
 $satoko['maxWidth']             = 300; // Maximum image width before thumbnailing happens.
 $satoko['maxHeight']            = 300; // Same as described above but with height.
+
+// ReCAPTCHA Settings
+$satoko['recap']['enable']  = true; // Enable or Disable ReCAPTCHA
+$satoko['recap']['public']  = ''; // Your ReCAPTCHA public key
+$satoko['recap']['private'] = ''; // Your ReCAPTCHA private key

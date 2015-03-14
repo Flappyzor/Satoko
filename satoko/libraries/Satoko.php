@@ -67,7 +67,9 @@ $renderData = [
         'rules' => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
         'version' => SATOKO_VERSION
     ],
-    'configuration' => $satoko,
     'server' => $_SERVER,
-    'lang' => $lang
+    'lang' => $lang,
+    'recap' => [
+        'public' => Satoko\Board::getConfig('recap', 'public')
+    ]
 ];

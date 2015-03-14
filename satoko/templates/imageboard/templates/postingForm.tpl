@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td>{{ lang.verification }}</td>
-                    <td><img src="http://i.oniichan.me/78_oDrNz.png" alt="fake captcha" /><br /><input type="text" /></td>
+                    <td><div class="g-recaptcha" data-sitekey="{{ recap.public }}"></div></td>
                 </tr>
                 <tr>
                     <td>{{ lang.file }}</td>

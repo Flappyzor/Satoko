@@ -6,6 +6,7 @@
         {% for styleName, styleLink in board.stylesheets %}
             <link rel="stylesheet" type="text/css" title="{{ styleName }}" href="{{ board.stylesPath }}{{ styleLink }}"{% if not loop.first %} disabled="true"{% endif %} />
         {% endfor %}
+        <script type="text/javascript" charset="{{ charset }}" src="https://www.google.com/recaptcha/api.js"></script>
         {#<script type="text/javascript" charset="{{ charset }}" src="[CONF]satokojs[/CONF]"></script>#}
         <meta name="description" content="{{ configuration.boardDescription }}" />
         <meta http-equiv="cache-control" content="max-age=0" />
