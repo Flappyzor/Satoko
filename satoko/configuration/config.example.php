@@ -4,7 +4,7 @@ $satoko = array(); // Define configuration array
 
 // PDO Database Connection
 $satoko['db']               = array();
-$satoko['db']['driver']     = 'mysql'; // SQL Driver in the lib/database folder
+$satoko['db']['driver']     = 'mysql'; // SQL Driver in the libraries/database folder
 $satoko['db']['unixsocket'] = false; // Use Unix Socket?
 $satoko['db']['host']       = 'localhost'; // SQL Database host
 $satoko['db']['port']       = 3306; // SQL Port
@@ -25,6 +25,7 @@ $satoko['imageFolder']      = 'src'; // Folder Images will be saved to.
 $satoko['thumbFolder']      = 'thumb'; // Folder thumbnails will be saved to.
 $satoko['enableSpoiler']    = true; // Enable image spoilering.
 $satoko['spoilerImg']       = 'spoiler.png'; // Link to spoiler image.
+$satoko['language']         = 'en-gb'; // The language strings file that should be used by the board in the libraries/language folder
 
 // Board Header
 $satoko['boardTitle']       = 'Satoko Image Board'; // Title displayed on the header of the board. (If you want the "/b/ - Random" style board names set this to "'/' . $satoko['board'] . '/ - Board Name';" without double quotes)

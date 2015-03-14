@@ -1,11 +1,11 @@
 <?php
 /*
-    Satoko Language File
-    British English
-    By Flashwave <http://flash.moe>
-*/
+ * Satoko Language File
+ * British English
+ * By Flashwave <http://flash.moe>
+ */
 
-$language = array(
+$lang = array(
 
     'catalog'       => 'Catalogue',
     'refresh'       => 'Refresh',
