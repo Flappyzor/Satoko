@@ -1,7 +1,7 @@
         <hr class="abovePostForm" />
         <div class="navLinks">
-            {% if configuration.catalogFile is not null %}
-                [<a href="./{{ configuration.catalogFile }}">{{ lang.catalog }}</a>]
+            {% if board.catalogFile is not null %}
+                [<a href="./{{ board.catalogFile }}">{{ lang.catalog }}</a>]
             {% endif %}
             [<a href="{{ server.PHP_SELF }}">{{ lang.refresh }}</a>]
         </div>
@@ -31,7 +31,7 @@
                     <td>{{ lang.file }}</td>
                     <td>
                         <input id="postFile" name="upfile" type="file" />
-                        {% if configuration.enableSpoiler %}
+                        {% if board.enableSpoiler %}
                         <div>
                             [<label><input name="spoiler" value="on" type="checkbox">{{ lang.spoilerq }}</label>]
                         </div>

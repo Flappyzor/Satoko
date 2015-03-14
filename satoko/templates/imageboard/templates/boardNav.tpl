@@ -5,7 +5,7 @@
                 </form>
             </div>
             <div class="pages">
-                {% for i in configuration.startPageCountAt..configuration.pageCount %}
+                {% for i in board.startPageCountAt..board.pageCount %}
                     [{{ i }}]
                 {% endfor %}
             </div>
