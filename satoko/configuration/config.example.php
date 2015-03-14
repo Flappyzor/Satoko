@@ -32,8 +32,8 @@ $satoko['boardSubtitle']    = 'Something that isn\'t (absolute) garbage.'; // Te
 $satoko['boardDescription'] = 'Describe your niche here'; // Description read by search engines etc.
 $satoko['boardDisclaimer']  = 'All trademarks and copyrights on this page are owned by their respective parties. Images uploaded are the responsibility of the Poster. Comments are owned by the Poster.'; // General disclaimer displayed in the footer of the board.
 $satoko['boardImage']       = 'logo/image.php'; // Set URL to board header. Script for randomising board header image is included in the logo folder, if you don't want to use this feature you can delete the logo folder.
-$satoko['boardList']        = 'boardlist.json'; // JSON file containing boardlinks for the header, if wanted you can make this an array instead and Satoko will detect and adjust to it.
-$satoko['boardRules']       = 'rules.json'; // The same as the variable above except with rules.
+$satoko['boardList']        = 'configuration/boardlist.json'; // JSON file containing boardlinks for the header, if wanted you can make this an array instead and Satoko will detect and adjust to it.
+$satoko['boardRules']       = 'configuration/rules.json'; // The same as the variable above except with rules.
 
 // Templates
 $satoko['tplFolder']        = 'templates'; // Local folder path to templates folder.
