@@ -23,11 +23,11 @@ if($satoko['exposeErrors']) {
 }
 
 // Include libraries
-require_once SATOKO_ROOT_DIRECTORY . 'lib/SatokoBase.php';
+require_once SATOKO_ROOT_DIRECTORY . 'libraries/SatokoBase.php';
 require_once SATOKO_ROOT_DIRECTORY . 'vendor/autoload.php';
 
 // Generate path to database driver
-$_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'lib/database/' . $satoko['db']['driver'] . '.php';
+$_DBNGNPATH = SATOKO_ROOT_DIRECTORY . 'libraries/database/' . $satoko['db']['driver'] . '.php';
 
 // Include database driver
 if(file_exists($_DBNGNPATH)) {
