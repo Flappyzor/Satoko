@@ -29,23 +29,23 @@ class Database {
         // Initialise connection
         self::initConnect(
             (
-            Board::getLocalConfig('db', 'unixsocket') ?
+            Board::getConfig('db', 'unixsocket') ?
                 self::prepareSock(
-                    Board::getLocalConfig('db', 'host'),
-                    Board::getLocalConfig('db', 'database')
+                    Board::getConfig('db', 'host'),
+                    Board::getConfig('db', 'database')
                 ) :
                 self::prepareHost(
-                    Board::getLocalConfig('db', 'host'),
-                    Board::getLocalConfig('db', 'database'),
+                    Board::getConfig('db', 'host'),
+                    Board::getConfig('db', 'database'),
                     (
-                        Board::getLocalConfig('db', 'port') !== null ?
-                        Board::getLocalConfig('db', 'port') :
+                        Board::getConfig('db', 'port') !== null ?
+                        Board::getConfig('db', 'port') :
                         3306
                     )
                 )
             ),
-            Board::getLocalConfig('db', 'username'),
-            Board::getLocalConfig('db', 'password')
+            Board::getConfig('db', 'username'),
+            Board::getConfig('db', 'password')
         );
         
     }
@@ -87,7 +87,7 @@ class Database {
     public static function fetch($table, $fetchAll = true, $data = null) {
         
         // Begin preparation of the statement
-        $prepare = 'SELECT * FROM `' . Board::getLocalConfig('db', 'prefix') . $table . '`';
+        $prepare = 'SELECT * FROM `' . Board::getConfig('db', 'prefix') . $table . '`';
         
         // If $data is set and is an array continue
         if(is_array($data)) {
@@ -132,7 +132,7 @@ class Database {
     public static function insert($table, $data) {
         
         // Begin preparation of the statement
-        $prepare = 'INSERT INTO `' . Board::getLocalConfig('db', 'prefix') . $table . '` ';
+        $prepare = 'INSERT INTO `' . Board::getConfig('db', 'prefix') . $table . '` ';
         
         // Run the foreach statement twice for (`stuff`) VALUES (:stuff)
         for($i = 0; $i < 2; $i++) {
@@ -172,7 +172,7 @@ class Database {
     public static function update($table, $data) {
         
         // Begin preparation of the statement
-        $prepare = 'UPDATE `' . Board::getLocalConfig('db', 'prefix') . $table . '`';
+        $prepare = 'UPDATE `' . Board::getConfig('db', 'prefix') . $table . '`';
         
         // Run a foreach on $data and complete the statement
         foreach($data as $key => $values) {
