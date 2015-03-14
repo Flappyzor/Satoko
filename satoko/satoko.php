@@ -1,4 +1,4 @@
- beginnWhere<?php
+<?php
 // Require core PHP files
 require_once 'libraries/Satoko.php';
 
