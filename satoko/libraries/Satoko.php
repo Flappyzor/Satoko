@@ -74,6 +74,7 @@ $renderData = [
         'boardList'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
         'startPageCountAt'  => Satoko\Board::getConfig('startPageCountAt'),
         'pageCount'         => Satoko\Board::getConfig('pageCount'),
+        'catalogFile'       => Satoko\Board::getConfig('catalogFile'),
         'homeURL'           => Satoko\Board::getConfig('homeURL'),
         'manageLink'        => Satoko\Board::getConfig('manageLink'),
         
