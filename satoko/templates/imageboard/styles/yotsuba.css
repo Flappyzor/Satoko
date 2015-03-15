@@ -88,6 +88,10 @@ div.navLinks {
     margin-bottom: 10px;
 }
 
+div.navLinks > a {
+    text-decoration: none;
+}
+
 #postForm {
     width: 468px;
 }
