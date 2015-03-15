@@ -63,16 +63,20 @@ $renderData = [
     'board' => [
     
         'charset' => Satoko\Board::getConfig('charset'),
+        'version'           => SATOKO_VERSION,
         
-        'boardList'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
         'stylesheets'       => Satoko\Board::getStylesheets(),
         'stylesPath'        => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
+
         'rules'             => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
         'allowedFiletypes'  => strtoupper(implode(', ', array_keys(Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardFiletypes'))))),
-        'version'           => SATOKO_VERSION,
+        
+        'boardList'         => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardList')),
         'startPageCountAt'  => Satoko\Board::getConfig('startPageCountAt'),
         'pageCount'         => Satoko\Board::getConfig('pageCount'),
-        'catalogFile'       => Satoko\Board::getConfig('catalogFile'),
+        'homeURL'           => Satoko\Board::getConfig('homeURL'),
+        'manageLink'        => Satoko\Board::getConfig('manageLink'),
+        
         'maxFileSize'       => Satoko\Board::getByteSymbol(Satoko\Board::getConfig('maxFileSize')),
         'maxWidth'          => Satoko\Board::getConfig('maxWidth'),
         'maxHeight'         => Satoko\Board::getConfig('maxHeight'),

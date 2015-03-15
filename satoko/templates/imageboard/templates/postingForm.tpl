@@ -1,7 +1,7 @@
         <hr class="abovePostForm" />
         <div class="navLinks">
             {% if board.catalogFile is not null %}
-                [<a href="./{{ board.catalogFile }}">{{ lang.catalog }}</a>]
+                [<a href="{{ board.catalogFile }}">{{ lang.catalog }}</a>]
             {% endif %}
             [<a href="{{ server.PHP_SELF }}">{{ lang.refresh }}</a>]
         </div>

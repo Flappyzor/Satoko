@@ -14,7 +14,9 @@
                     <input value="{{ lang.next }}" type="submit">
                 </form>
             </div>
+            {% if board.catalogFile is not null %}
             <div class="pages cataloglink">
-                <a href="catalog.html">{{ lang.catalog }}</a>
+                <a href="{{ board.catalogFile }}">{{ lang.catalog }}</a>
             </div>
+            {% endif %}
         </div>
