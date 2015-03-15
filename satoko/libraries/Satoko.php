@@ -89,7 +89,7 @@ $renderData = [
         'disclaimer'        => Satoko\Board::getConfig('boardDisclaimer'),
         'bannerImage'       => Satoko\Board::getConfig('boardImage'),
         
-        'currentPage'       => ((isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] <> (Satoko\Board::getConfig('pageCount') - Satoko\Board::getConfig('startPageCountAt'))) ? $_GET['page'] : 0)
+        'currentPage'       => ((isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > (Satoko\Board::getConfig('pageCount') - Satoko\Board::getConfig('startPageCountAt')) && $_GET['page'] < (Satoko\Board::getConfig('pageCount') - Satoko\Board::getConfig('startPageCountAt'))) ? $_GET['page'] : 0)
         
     ],
     'server' => $_SERVER,
