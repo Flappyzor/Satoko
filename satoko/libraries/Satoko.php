@@ -62,11 +62,12 @@ Satoko\Board::setBoard(Satoko\Board::getConfig('board'));
 $renderData = [
     'board' => [
     
-        'charset' => Satoko\Board::getConfig('charset'),
+        'charset'           => Satoko\Board::getConfig('charset'),
+        'cookiePrefix'      => Satoko\Board::getConfig('cookiePrefix'),
         'version'           => SATOKO_VERSION,
         
         'stylesheets'       => Satoko\Board::getStylesheets(),
-        'stylesPath'        => Satoko\Board::getConfig('tplFolder') .'/'. Satoko\Board::getConfig('tplName') .'/styles/',
+        'templatePath'      => Satoko\Board::$_TPLPUBPATH,
 
         'rules'             => Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardRules')),
         'allowedFiletypes'  => strtoupper(implode(', ', array_keys(Satoko\Board::getJSONArray(Satoko\Board::getConfig('boardFiletypes'))))),
@@ -82,11 +83,11 @@ $renderData = [
         'maxWidth'          => Satoko\Board::getConfig('maxWidth'),
         'maxHeight'         => Satoko\Board::getConfig('maxHeight'),
         
-        'title'         => Satoko\Board::getConfig('boardTitle'),
-        'subtitle'      => Satoko\Board::getConfig('boardSubtitle'),
-        'description'   => Satoko\Board::getConfig('boardDescription'),
-        'disclaimer'    => Satoko\Board::getConfig('boardDisclaimer'),
-        'bannerImage'   => Satoko\Board::getConfig('boardImage')
+        'title'             => Satoko\Board::getConfig('boardTitle'),
+        'subtitle'          => Satoko\Board::getConfig('boardSubtitle'),
+        'description'       => Satoko\Board::getConfig('boardDescription'),
+        'disclaimer'        => Satoko\Board::getConfig('boardDisclaimer'),
+        'bannerImage'       => Satoko\Board::getConfig('boardImage')
         
     ],
     'server' => $_SERVER,

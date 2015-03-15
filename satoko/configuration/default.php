@@ -29,6 +29,7 @@ $satoko['spoilerImg']       = 'spoiler.png'; // Link to spoiler image.
 $satoko['language']         = 'en-gb'; // The language strings file that should be used by the board in the libraries/language folder
 $satoko['homeURL']          = '/'; // URL used for the Home link in the top and bottom right (null disables this feature)
 $satoko['manageLink']       = true; // Toggle the manage link in the top and bottom right
+$satoko['cookiePrefix']     = 'satoko_'; // Prefix used for cookies
 
 // Board Header
 $satoko['boardTitle']       = 'Satoko Image Board'; // Title displayed on the header of the board. (If you want the "/b/ - Random" style board names set this to "'/' . $satoko['board'] . '/ - Board Name';" without double quotes)

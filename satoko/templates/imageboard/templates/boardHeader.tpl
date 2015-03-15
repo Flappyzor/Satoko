@@ -3,17 +3,15 @@
     <head>
         <meta charset="{{ board.charset }}" />
         <title>{{ board.title }}</title>
+        <meta name="description" content="{{ board.description }}" />
         {% for styleName, styleLink in board.stylesheets %}
-            <link rel="stylesheet" type="text/css" title="{{ styleName }}" href="{{ board.stylesPath }}{{ styleLink }}"{% if not loop.first %} disabled="true"{% endif %} />
+            <link rel="stylesheet" type="text/css" title="{{ styleName }}" href="{{ board.templatePath }}/styles/{{ styleLink }}"{% if not loop.first %} disabled="true"{% endif %} />
         {% endfor %}
         <script type="text/javascript" charset="{{ board.charset }}" src="https://www.google.com/recaptcha/api.js"></script>
-        {#<script type="text/javascript" charset="{{ board.charset }}" src="[CONF]satokojs[/CONF]"></script>#}
-        <meta name="description" content="{{ board.description }}" />
-        <meta http-equiv="cache-control" content="max-age=0" />
-        <meta http-equiv="cache-control" content="no-cache" />
-        <meta http-equiv="expires" content="0" />
-        <meta http-equiv="expires" content="Thu, 01 Jan 1970 1:00:00 GMT" />
-        <meta http-equiv="pragma" content="no-cache" />
+        <script type="text/javascript" charset="{{ board.charset }}" src="{{ board.templatePath }}/imageboard.js"></script>
+        <script type="text/javascript">
+            Satoko.cookiePrefix = '{{ board.cookiePrefix }}';
+        </script>
     </head>
     <body>
         <div id="top"></div>
