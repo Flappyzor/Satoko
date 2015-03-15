@@ -3,4 +3,4 @@
 require_once 'libraries/Satoko.php';
 
 // Start board
-print Satoko\Board::$_TPL->render('index.tpl', $renderData);
+print Satoko\Board::$_TPL->render('index', $renderData);
